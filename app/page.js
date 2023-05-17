@@ -9,8 +9,12 @@ import Team from "@/sections/Team";
 import Technologies from "@/sections/Technologies";
 import Testimonials from "@/sections/Testimonials";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Home({ Component, pageProps }) {
+  const path = usePathname();
+  console.log(path, "route");
+
   return (
     <div>
       <Landing />

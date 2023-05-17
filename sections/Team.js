@@ -6,7 +6,7 @@ import dpSiraj from "../public/images/TeamMembers/Image 11.png";
 import dpUbaid from "../public/images/TeamMembers/Image 12.png";
 import CustomHeader from "../components/CustomHeader";
 import Image from "next/image";
-
+import linkedIn from "../public/Icons/linkedin.svg";
 const Team = () => {
   const data = [
     {
@@ -60,26 +60,11 @@ const Team = () => {
                     <h2 className="text-card text-center text-wp-gray font-bold">
                       {name}
                     </h2>
-                    <h2 className="text-subHeader  text-wp-gray font-medium">
+                    <h2 className="text-[20px]  text-wp-gray font-medium">
                       {detail}
                     </h2>
-                    <span className="shrink-0 mt-2 sm:block lg:block rounded-full bg-blue p-4">
-                      <svg
-                        className="h-8 w-8"
-                        fill="none"
-                        stroke="white"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                        ></path>
-                      </svg>
+                    <span className="shrink-0 mt-2 sm:block lg:block rounded-full w-16 items-center h-16 bg-blue p-0">
+                      <Image className="w-full" src={linkedIn} />
                     </span>
                   </div>
                 </div>

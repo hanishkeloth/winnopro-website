@@ -3,43 +3,60 @@ import logo from "../public/images/HeaderImages/wplogo.png";
 import name from "../public/images/HeaderImages/wpname.png";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
+  const [activeLink, setActiveLink] = useState("#/home");
+
+  const router = useRouter();
+  console.log("cur", router);
+
   const links = [
     {
       label: "Home",
-      url: "/#home",
+      url: "home",
     },
     {
       label: "About Us",
-      url: "/#about",
+      url: "about",
     },
     {
       label: "Services",
-      url: "/#services",
+      url: "services",
     },
     {
       label: "Systematics ",
-      url: "/#systematics ",
+      url: "systematics ",
     },
     {
       label: "Technologies ",
-      url: "/#technologies ",
+      url: "technologies ",
     },
     {
       label: "Team ",
-      url: "/#team ",
+      url: "team ",
     },
 
     {
       label: "Contact ",
-      url: "/#contact ",
+      url: "contact ",
     },
   ];
+
+  const handleClickScroll = (url) => {
+    const element = document.getElementById(url);
+    console.log(element, url, "elem");
+    setActiveLink(url);
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="w-full bg-white sticky shadow-md z-20 top-0 text-description font-cambria text-wp-gray ">
-      <div className="justify-between px-4 mx-auto lg:max-w-screen  lg:py-4 md:items-center md:flex md:px-8 lg:px-14">
+      <div className="justify-between px-4 mx-auto lg:max-w-screen lg:py-4 md:items-center md:flex md:px-8 lg:px-14">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link href="/" className="flex items-center space-x-1 ">
@@ -99,14 +116,26 @@ export default function NavBar() {
         <div>
           <div
             className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-              navbar ? "block" : "hidden"
+              navbar
+                ? "block w-[280px] h-screen bg-sec-blue absolute right-0 top-0 "
+                : "hidden"
             }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               {links.map(({ label, url }) => {
                 return (
-                  <li className="text-gray-600 hover:text-orange">
-                    <a href={url}>{label}</a>
+                  <li
+                    onClick={() => handleClickScroll(url)}
+                    // onClick={() => setActiveLink(url)}
+                    className={` cursor-pointer ${
+                      activeLink === url
+                        ? "text-orange"
+                        : navbar
+                        ? "ml-10 mt-10 text-white"
+                        : " text-gray-600 "
+                    } hover:text-orange`}
+                  >
+                    <h1>{label}</h1>
                   </li>
                 );
               })}

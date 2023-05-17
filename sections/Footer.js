@@ -133,7 +133,7 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-white transition hover:opacity-75"
+                    className=" text-gray-800 transition hover:opacity-75"
                   >
                     <span className="sr-only">GitHub</span>
 

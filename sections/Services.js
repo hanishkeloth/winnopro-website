@@ -9,7 +9,7 @@ function OurServices() {
   return (
     <div
       id="services"
-      className="w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 bg-main-orange "
+      className="w-screen-xl pl-9 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 bg-main-orange "
     >
       {/* <div className="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0">
         {" "}
@@ -27,8 +27,8 @@ function OurServices() {
         <a href="#" className="relative block overflow-hidden mb-5 ">
           <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
 
-          <div className="sm:flex space-x-5 items-center ">
-            <div className="hidden sm:block sm:shrink-0">
+          <div className="flex space-x-5 items-center ">
+            <div className="block sm:shrink-0">
               <Image
                 alt=""
                 src={servicesicon}
@@ -36,7 +36,7 @@ function OurServices() {
               />
             </div>
             <div>
-              <h3 className="text-xl lg:text-cardtitle font-bold text-wp-gray sm:text-2xl">
+              <h3 className=" text-mobCardTitle lg:text-cardtitle font-bold text-wp-gray ">
                 GPT 4-based AI Applications
               </h3>
             </div>

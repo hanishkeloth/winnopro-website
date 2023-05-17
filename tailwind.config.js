@@ -14,6 +14,11 @@ module.exports = {
       card: "28px",
       cardtitle: "30px",
       cardDesc: "18px",
+      mobHeader: "45px",
+      mobsubHeader: "19px",
+      mobDescription: "18px",
+      mobCard: "22px",
+      mobCardTitle: "25px",
     },
     extend: {
       colors: {
