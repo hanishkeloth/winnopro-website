@@ -1,19 +1,27 @@
 import React from "react";
 import CustomHeader from "../components/CustomHeader";
+import GoogleMapComponent from "@/components/GoogleMap";
 
 const ContactForm = () => {
   return (
     <div
       id="contact"
-      className="w-screen-xl min-h-screen font-cambria px-4 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 bg-main-orange "
+      className="w-screen-xl min-h-screen font-cambria px-0 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 bg-main-orange "
     >
-      <CustomHeader sub="CONTACT US" main="Get In Touch" classes="text-white" />
-
+      <div className=" px-4 md:px-0 sm:px-0 lg:px-0">
+        <CustomHeader
+          sub="CONTACT US"
+          main="Get In Touch"
+          classes="text-white"
+        />
+      </div>
       <div className="mt-10 max-w-screen ">
         <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
-          <div className="lg:col-span-2 h-[408px] bg-green "></div>
+          <div className="lg:col-span-2  h-[308px] lg:h-[408px] bg-green ">
+            <GoogleMapComponent />
+          </div>
 
-          <div className=" lg:col-span-3 ">
+          <div className=" px-4 md:px-0 sm:px-0 lg:px-0 lg:col-span-3 ">
             <form action="" className="space-y-4">
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <input
@@ -54,7 +62,7 @@ const ContactForm = () => {
                 ></textarea>
               </div>
 
-              <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="mt-4 mx-20 lg:mx-0 sm:mx-0 md:mx-0 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <button
                   type="submit"
                   className="inline-block w-full bg-black py-3  text-white text-subHeader opacity-80 sm:w-auto"

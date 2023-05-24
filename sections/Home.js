@@ -22,16 +22,12 @@ export const data = [
   },
 ];
 
-function Landing() {
+function Home() {
   const [current, setCurrent] = useState(0);
   return (
     <div id="home">
       <Slide currentValue={(value) => setCurrent(value)} data={data}>
         <div
-          // onTouchStart={onTouchStart}
-          // onTouchMove={onTouchMove}
-          // onTouchEnd={onTouchEnd}
-          // key={index}
           className={
             current == 0
               ? "carousel_card carousel_card-active"
@@ -46,25 +42,9 @@ function Landing() {
               <br />
               Innovations
             </p>
-            {/* <h2
-        onMouseEnter={() => {
-          setAutoPlay(false);
-          clearTimeout(timeOut);
-        }}
-        onMouseLeave={() => {
-          setAutoPlay(true);
-        }}
-        className=" text-white font-bold text-[80px]  "
-      >
-        {image.title}
-      </h2> */}
           </div>
         </div>
         <div
-          // onTouchStart={onTouchStart}
-          // onTouchMove={onTouchMove}
-          // onTouchEnd={onTouchEnd}
-          // key={index}
           className={
             current == 1
               ? "carousel_card carousel_card-active"
@@ -82,10 +62,6 @@ function Landing() {
           </div>
         </div>
         <div
-          // onTouchStart={onTouchStart}
-          // onTouchMove={onTouchMove}
-          // onTouchEnd={onTouchEnd}
-          // key={index}
           className={
             current == 2
               ? "carousel_card carousel_card-active"
@@ -110,18 +86,6 @@ function Landing() {
               </span>
               Innovations
             </p>
-            {/* <h2
-                // onMouseEnter={() => {
-                //   setAutoPlay(false);
-                //   clearTimeout(timeOut);
-                // }}
-                // onMouseLeave={() => {
-                //   setAutoPlay(true);
-                // }}
-                className=" text-white font-bold text-[80px]  "
-              >
-                {image.title}
-              </h2> */}
           </div>
         </div>
       </Slide>
@@ -129,4 +93,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default Home;

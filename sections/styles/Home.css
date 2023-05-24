@@ -10,7 +10,7 @@
   opacity: 0;
   pointer-events: none;
   transform: scale(0.8);
-  transition: 0.5s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 
 .carousel_card-active {

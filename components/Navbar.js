@@ -1,7 +1,5 @@
 import { useState } from "react";
 import logo from "../public/images/HeaderImages/wplogo.png";
-import name from "../public/images/HeaderImages/wpname.png";
-import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -58,23 +56,14 @@ export default function NavBar() {
     <div className="w-full bg-white sticky shadow-md z-20 top-0 text-description font-cambria text-wp-gray ">
       <div className="justify-between px-4 mx-auto lg:max-w-screen lg:py-4 md:items-center md:flex md:px-8 lg:px-14">
         <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link href="/" className="flex items-center space-x-1 ">
-              <Image
-                src={logo}
-                alt="/"
-                //  width="125"
-                height="32"
-                className="cursor-pointer"
-              />
-              <Image
-                src={name}
-                alt="/"
-                //  width="125"
-                height="32"
-                className="cursor-pointer"
-              />
-            </Link>
+          <div className="flex items-center justify-between md:block">
+            <Image
+              src={logo}
+              alt="/"
+              //  width="155"
+              height="70"
+              className="cursor-pointer object-contain "
+            />
             <div className="md:hidden">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -83,7 +72,7 @@ export default function NavBar() {
                 {navbar ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6"
+                    className="w-6 h-6 z-50 absolute "
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -117,7 +106,7 @@ export default function NavBar() {
           <div
             className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
               navbar
-                ? "block w-[280px] h-screen bg-sec-blue absolute right-0 top-0 "
+                ? "block w-[280px] h-screen bg-sec-blue absolute right-0 -top-8 "
                 : "hidden"
             }`}
           >

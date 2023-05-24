@@ -5,12 +5,20 @@ import technology1 from "../public/Icons/winnopro_icon_Technolgies - 1.svg";
 import technology2 from "../public/Icons/winnopro_icon_Technolgies - 2.svg";
 import technology3 from "../public/Icons/winnopro_icon_Technolgies - 3.svg";
 import technology4 from "../public/Icons/winnopro_icon_Technolgies - 4.svg";
+import technology5 from "../public/Icons/winnopro_icon_Technolgies - 5.svg";
+import technology6 from "../public/Icons/winnopro_icon_Technolgies - 6.svg";
+import technology7 from "../public/Icons/winnopro_icon_Technolgies - 7.svg";
+import technology8 from "../public/Icons/winnopro_icon_Technolgies - 8.svg";
 
-import "./styles/Home.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import CustomHeader from "../components/CustomHeader";
 import Image from "next/image";
+import Slider from "react-slick";
 const Technologies = () => {
-  const [current, setCurrent] = useState(0);
+  const slider = React.useRef(null);
+
   const data = [
     [
       {
@@ -34,25 +42,48 @@ const Technologies = () => {
         items: ["TensorFlow", "scikit-learn,", "PyTorch", "Keras", "Pandas"],
       },
     ],
-    // [
-    //   {
-    //     topic: "Cloud:",
-    //     items: ["AWS", "Azure", "PyTorch", "Gcloud"],
-    //   },
-    //   {
-    //     topic: "Generative AI:",
-    //     items: ["(GPT 4)"],
-    //   },
-    //   {
-    //     topic: "Conversational AI:",
-    //     items: [""],
-    //   },
-    //   {
-    //     topic: "AR, VR & MR:",
-    //     items: [""],
-    //   },
-    // ],
+    [
+      {
+        icon: technology5,
+        topic: "Cloud:",
+        items: ["AWS", "Azure", "PyTorch", "Gcloud"],
+      },
+      {
+        icon: technology6,
+        topic: "Generative AI:",
+        items: ["(GPT 4)"],
+      },
+      {
+        icon: technology7,
+        topic: "Conversational AI:",
+        items: [""],
+      },
+      {
+        icon: technology8,
+        topic: "AR, VR & MR:",
+        items: [""],
+      },
+    ],
   ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    customPaging: function (i) {
+      return (
+        <div key={i} className="dot">
+          {i}
+        </div>
+      );
+    },
+    dotsClass: "slick-dots slick-thumb",
+  };
 
   return (
     <section
@@ -72,45 +103,45 @@ const Technologies = () => {
           sub="TECHNOLOGIES"
           main="Technologies We Work with"
         />
-        {/* <Slide currentValue={(value) => setCurrent(value)} data={data}> */}
-        {/* {Object.keys(data).map((key, index) => {
-          return ( */}
-        {/* <div
-          className={
-           // index == current
-              ? " opacity-[1] scale-100 pointer-events-auto "
-              : "flex flex-1 w-auto h-auto absolute overflow-hidden opacity-0 pointer-events-none "
-          }
-          key={key}
-        > */}
-        <div
-          //  key={key}
-          className="mt-8 h-max grid grid-cols-2 gap-4 md:mt-10 md:grid-cols-2 md:gap-4 lg:grid-cols-4"
-        >
-          {data[0].map(({ topic, items, icon }) => {
-            return (
-              <div className="flex flex-col font-cambria h-full items-center p-6 gap-4 bg-wp-lGray rounded-xl ">
-                <span className="shrink-0 hidden sm:block lg:block rounded-full bg-white p-4">
-                  <Image src={icon} className="w-[110px] h-[110px] " />
-                </span>
-                <h2 className="text-xl lg:text-card text-center text-wp-gray font-bold">
-                  {topic}
-                </h2>
-                {items.map((i) => {
-                  return (
-                    <h2 className="text-lg lg:text-subHeader text-wp-gray max-w-[20ch] font-medium">
-                      {i}
+        <Slider ref={slider} {...settings}>
+          {Object.keys(data).map((item, i) => (
+            <div
+              onWheel={(event) => {
+                if (event.nativeEvent.wheelDelta > 0) {
+                  slider?.current?.slickNext();
+                } else {
+                  slider?.current?.slickPrev();
+                }
+              }}
+            >
+              <div
+                key={i}
+                className="mt-8 mb-10 mx-2 h-max grid grid-cols-2 gap-2 lg:gap-2 md:mt-10 md:grid-cols-2 md:gap-4 lg:grid-cols-4"
+              >
+                {data[item].map((card, key) => (
+                  <div
+                    key={key}
+                    className="flex flex-col font-cambria lg:h-[485px] h-[360px] items-center p-2 lg:px-2 lg:py-6 gap-2 lg:gap-4 bg-wp-lGray rounded-xl "
+                  >
+                    <span className="shrink-0  sm:block lg:block rounded-full p-1">
+                      <Image src={card.icon} className="w-[120px] h-[120px] " />
+                    </span>
+                    <h2 className="text-xl lg:text-[24px] text-center text-wp-gray font-bold">
+                      {card.topic}
                     </h2>
-                  );
-                })}
+                    {card.items.map((i) => {
+                      return (
+                        <h2 className="text-lg lg:text-[20px] text-wp-gray max-w-[20ch] font-medium">
+                          {i}
+                        </h2>
+                      );
+                    })}
+                  </div>
+                ))}
               </div>
-            );
-          })}
-        </div>
-        {/* </div> */}
-        {/* );
-        })} */}
-        {/* </Slide> */}
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   );

@@ -7,6 +7,25 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: { min: "140px", max: "1020px" },
+      // => @media (min-width: 640px) { ... }
+
+      sm: "640px",
+      // => @media (min-width: 640px) { ... }
+
+      md: "768px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      xl: "1280px",
+      // => @media (min-width: 1280px) { ... }
+
+      "2xl": "1536px",
+      // => @media (min-width: 1536px) { ... }
+    },
     fontSize: {
       header: "55px",
       subHeader: "24px",
@@ -16,9 +35,9 @@ module.exports = {
       cardDesc: "18px",
       mobHeader: "45px",
       mobsubHeader: "19px",
-      mobDescription: "18px",
-      mobCard: "22px",
-      mobCardTitle: "25px",
+      mobDescription: "17px",
+      mobCard: "20px",
+      mobCardTitle: "24px",
     },
     extend: {
       colors: {
@@ -111,7 +130,6 @@ module.exports = {
       },
       fontFamily: {
         cambria: ["Cambria"],
-        poppins: ["Poppins", "sans-serif"],
         lato: ["Lato", "sans-serif"],
       },
     },
