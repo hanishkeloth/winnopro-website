@@ -111,7 +111,7 @@ function OurServices() {
   return (
     <div
       id="services"
-      className="w-screen-xl pl-9 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 bg-main-orange "
+      className="w-screen-xl -mb-[280px] pl-9 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 bg-main-orange "
     >
       <CustomHeader classes=" text-white " sub="SERVICES" main="Our Services" />
       <Slider ref={slider} {...settings}>

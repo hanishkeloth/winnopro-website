@@ -6,7 +6,7 @@ const ContactForm = () => {
   return (
     <div
       id="contact"
-      className="w-screen-xl min-h-screen font-cambria px-0 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 bg-main-orange "
+      className="w-screen-xl -mb-[300px] min-h-screen font-cambria px-0 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 bg-main-orange "
     >
       <div className=" px-4 md:px-0 sm:px-0 lg:px-0">
         <CustomHeader

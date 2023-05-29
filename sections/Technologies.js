@@ -94,10 +94,14 @@ const Technologies = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundImage: `url(${image.src})`,
+        // marginBottom: "-800px",
       }}
-      className="lg:h-[110vh] "
+      className="lg:h-[110vh] -mb-[300px] "
     >
-      <div className="w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 ">
+      <div
+        id="technologiesContent"
+        className="w-screen-xl mt-[100px] px-4 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 "
+      >
         <CustomHeader
           classes=" text-white "
           sub="TECHNOLOGIES"

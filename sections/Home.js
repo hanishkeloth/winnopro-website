@@ -3,8 +3,14 @@ import Slide from "../components/Slide";
 import image1 from "../public/images/SlideImages/spotlight_1.png";
 import image2 from "../public/images/SlideImages/spotlight-2.jpeg";
 import image3 from "../public/images/SlideImages/spotlight_3.png";
+
+import mobImage from "../public/images/MobileImages/spotlight_1_mobile.jpg";
+import mobImage2 from "../public/images/MobileImages/spotlight_2_mobile.jpg";
+import mobImage3 from "../public/images/MobileImages/spotlight_3_mobile.jpg";
+
 import "./styles/Home.css";
 import Image from "next/image";
+import { useWindowWidth } from "@/components/WindowWidth";
 
 export const data = [
   {
@@ -22,8 +28,11 @@ export const data = [
   },
 ];
 
-function Home() {
+function HomeSection() {
   const [current, setCurrent] = useState(0);
+
+  const windowWidth = useWindowWidth();
+  console.log(windowWidth, "ei");
   return (
     <div id="home">
       <Slide currentValue={(value) => setCurrent(value)} data={data}>
@@ -34,9 +43,17 @@ function Home() {
               : "carousel_card"
           }
         >
-          <Image className="w-full object-cover " src={image1} alt="" />
-          <div className="flex items-center lg:items-center lg:justify-start justify-center lg:ml-60 w-full h-full text-center font-cambria absolute ">
-            <p className="text-white font-bold text-[50px] lg:text-[75px] leading-[40px] lg:leading-[57px] ">
+          <Image
+            id="homeImg"
+            className="w-full object-cover "
+            src={windowWidth < 600 ? mobImage : image1}
+            alt=""
+          />
+          <div className="flex mt-32 lg:mt-0 lg:items-center justify-center lg:justify-start lg:ml-52 w-full h-full text-center font-cambria absolute ">
+            <p
+              id="homeText"
+              className="text-white font-bold text-[50px] lg:text-[75px] leading-[40px] lg:leading-[57px] "
+            >
               Winning <br />{" "}
               <span class="  lg:text-[45px] text-[30px]">through</span>
               <br />
@@ -51,9 +68,17 @@ function Home() {
               : "carousel_card"
           }
         >
-          <Image className="w-full object-cover " src={image2} alt="" />
-          <div className="flex items-center ml-14 lg:ml-60 w-full h-full text-center font-cambria absolute ">
-            <p className="text-white font-bold text-[40px] lg:text-[75px]  leading-[57px] ">
+          <Image
+            id="homeImg"
+            className="w-full object-cover "
+            src={windowWidth < 600 ? mobImage2 : image2}
+            alt=""
+          />
+          <div className="flex mt-10 lg:items-center justify-center lg:justify-start lg:ml-60 w-full h-full text-center font-cambria absolute ">
+            <p
+              id="homeText"
+              className="text-white font-bold text-[50px] lg:text-[75px] leading-[40px] lg:leading-[57px] "
+            >
               We Care <br />
               <span class=" text-[25px] lg:text-[45px] ">and</span>
               <br />
@@ -68,9 +93,17 @@ function Home() {
               : "carousel_card"
           }
         >
-          <Image className="w-full object-cover " src={image3} alt="" />
+          <Image
+            id="homeImg"
+            className="w-full object-cover "
+            src={windowWidth < 600 ? mobImage3 : image3}
+            alt=""
+          />
           <div className="flex items-top mt-10 lg:mt-40 justify-center text-sec-blue w-full h-full text-center font-cambria absolute ">
-            <p className=" hidden lg:block font-bold text-[40px] lg:text-[75px] leading-none ">
+            <p
+              id="homeText"
+              className=" hidden lg:block font-bold text-[40px] lg:text-[75px] leading-none "
+            >
               Touching <br />
               every aspect of lives <br />
               <span class=" lg:text-[50px] text-[25px]">through </span>
@@ -93,4 +126,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeSection;

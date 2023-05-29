@@ -39,7 +39,7 @@ const Systematics = () => {
     },
   ];
   return (
-    <div id="systematics">
+    <div id="systematics" className="-mb-[385px]">
       <div
         style={{
           position: "relative",
@@ -56,7 +56,10 @@ const Systematics = () => {
             main="Methodology & Project Lifecycle"
           />
 
-          <div className="mt-8 grid grid-cols-2 gap-1.5 md:mt-10 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
+          <div
+            id="systematicsContent"
+            className="mt-8  grid grid-cols-2 gap-1.5 md:mt-10 md:grid-cols-2 md:gap-4 lg:grid-cols-3"
+          >
             {data.map((i) => {
               return (
                 <div className="flex items-center p-1 lg:p-4 gap-1 lg:gap-4 bg-wp-lGray rounded-full ">

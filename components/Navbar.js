@@ -1,14 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../public/images/HeaderImages/wplogo.png";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useWindowWidth } from "./WindowWidth";
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
   const [activeLink, setActiveLink] = useState("#/home");
-
-  const router = useRouter();
-  console.log("cur", router);
 
   const links = [
     {
@@ -52,6 +49,13 @@ export default function NavBar() {
     }
   };
 
+  const windowWidth = useWindowWidth();
+  useEffect(() => {
+    if (windowWidth < 650) {
+      setNavbar(false);
+    }
+  }, [windowWidth]);
+
   return (
     <div className="w-full bg-white sticky shadow-md z-20 top-0 text-description font-cambria text-wp-gray ">
       <div className="justify-between px-4 mx-auto lg:max-w-screen lg:py-4 md:items-center md:flex md:px-8 lg:px-14">
@@ -66,15 +70,15 @@ export default function NavBar() {
             />
             <div className="md:hidden">
               <button
-                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                className="p-2 text-wpGray rounded-md outline-none "
                 onClick={() => setNavbar(!navbar)}
               >
                 {navbar ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 z-50 absolute "
+                    className="w-6 h-6 top-5 right-5 z-50 absolute "
                     viewBox="0 0 20 20"
-                    fill="currentColor"
+                    fill="white"
                   >
                     <path
                       fillRule="evenodd"
@@ -86,7 +90,7 @@ export default function NavBar() {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-6 h-6"
-                    fill="none"
+                    fill="white"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     strokeWidth={2}
@@ -110,21 +114,22 @@ export default function NavBar() {
                 : "hidden"
             }`}
           >
-            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              {links.map(({ label, url }) => {
+            <ul className="items-center mt-20 lg:mt-0 md:mt-0 sm:mt- justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+              {links.map((item, index) => {
                 return (
                   <li
-                    onClick={() => handleClickScroll(url)}
+                    key={index}
+                    onClick={() => handleClickScroll(item.url)}
                     // onClick={() => setActiveLink(url)}
                     className={` cursor-pointer ${
-                      activeLink === url
+                      activeLink === item.url
                         ? "text-orange"
                         : navbar
                         ? "ml-10 mt-10 text-white"
                         : " text-gray-600 "
                     } hover:text-orange`}
                   >
-                    <h1>{label}</h1>
+                    <h1>{item.label}</h1>
                   </li>
                 );
               })}
