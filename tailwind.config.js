@@ -9,6 +9,8 @@ module.exports = {
   theme: {
     screens: {
       xs: { min: "140px", max: "1020px" },
+      sl: { min: "640px", max: "2020px" },
+
       // => @media (min-width: 640px) { ... }
 
       sm: "640px",
@@ -27,17 +29,17 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     fontSize: {
-      header: "55px",
-      subHeader: "24px",
+      header: "50px",
+      subHeader: "20px",
       description: "20px",
       card: "28px",
       cardtitle: "30px",
       cardDesc: "18px",
-      mobHeader: "45px",
+      mobHeader: "35px",
       mobsubHeader: "19px",
-      mobDescription: "17px",
+      mobDescription: "15px",
       mobCard: "20px",
-      mobCardTitle: "24px",
+      mobCardTitle: "19px",
     },
     extend: {
       colors: {
@@ -129,8 +131,8 @@ module.exports = {
         "pink-lightest": "#ffebef",
       },
       fontFamily: {
-        cambria: ["Cambria"],
-        lato: ["Lato", "sans-serif"],
+        cambria: ["Cambria", "Cambria2"],
+        // lato: ["Lato", "sans-serif"],
       },
     },
   },

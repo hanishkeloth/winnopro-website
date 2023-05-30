@@ -9,7 +9,7 @@ const CustomHeader = ({ main, sub, classes }) => {
         {sub}
       </p>
       <h2
-        className={` lg:text-header text-mobHeader leading-none font-bold sm:text-4xl ${
+        className={` lg:text-header text-mobHeader leading-none font-extrabold sm:text-4xl ${
           classes || "text-wp-gray"
         }`}
       >

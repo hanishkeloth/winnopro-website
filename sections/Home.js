@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import Slide from "../components/Slide";
-import image1 from "../public/images/SlideImages/spotlight_1.png";
-import image2 from "../public/images/SlideImages/spotlight-2.jpeg";
-import image3 from "../public/images/SlideImages/spotlight_3.png";
-
-import mobImage from "../public/images/MobileImages/spotlight_1_mobile.jpg";
-import mobImage2 from "../public/images/MobileImages/spotlight_2_mobile.jpg";
-import mobImage3 from "../public/images/MobileImages/spotlight_3_mobile.jpg";
-
 import "./styles/Home.css";
 import Image from "next/image";
 import { useWindowWidth } from "@/components/WindowWidth";
 
-export const data = [
+import image1 from "../public/images/SlideImages/spotlight_1.png";
+import image2 from "../public/images/SlideImages/spotlight-2.jpeg";
+import image3 from "../public/images/SlideImages/spotlight_3.png";
+import mobImage from "../public/images/MobileImages/spotlight_1_mobile.jpg";
+import mobImage2 from "../public/images/MobileImages/spotlight_2_mobile.jpg";
+import mobImage3 from "../public/images/MobileImages/spotlight_3_mobile.jpg";
+
+const data = [
   {
     image: image1,
     title: "Winning through Innovations",
@@ -32,9 +31,9 @@ function HomeSection() {
   const [current, setCurrent] = useState(0);
 
   const windowWidth = useWindowWidth();
-  console.log(windowWidth, "ei");
+
   return (
-    <div id="home">
+    <div className="  " id="home">
       <Slide currentValue={(value) => setCurrent(value)} data={data}>
         <div
           className={
@@ -77,7 +76,7 @@ function HomeSection() {
           <div className="flex mt-10 lg:items-center justify-center lg:justify-start lg:ml-60 w-full h-full text-center font-cambria absolute ">
             <p
               id="homeText"
-              className="text-white font-bold text-[50px] lg:text-[75px] leading-[40px] lg:leading-[57px] "
+              className="text-white font-bold text-[40px] lg:text-[75px] leading-[40px] lg:leading-[57px] "
             >
               We Care <br />
               <span class=" text-[25px] lg:text-[45px] ">and</span>

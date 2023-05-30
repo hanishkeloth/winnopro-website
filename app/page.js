@@ -1,7 +1,7 @@
 "use client";
 
-import Apps from "./App";
+import App from "./App";
 
 export default function Home({ Component, pageProps }) {
-  return <Apps />;
+  return <App />;
 }

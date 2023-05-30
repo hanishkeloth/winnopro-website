@@ -17,6 +17,7 @@
   opacity: 1;
   transform: scale(1);
   pointer-events: visible;
+  background-color: #1c5f71;
 }
 .card_image {
   width: 100%;

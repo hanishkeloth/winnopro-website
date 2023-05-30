@@ -1,17 +1,17 @@
+import Image from "next/image";
+import { useWindowWidth } from "../components/WindowWidth";
+import Slider from "react-slick";
 import React, { useRef } from "react";
+
 import servicesicon from "../public/Icons/services.png";
 import CustomHeader from "../components/CustomHeader";
 import image from "../public/images/Services/image10.png";
 import image1 from "../public/images/Services/services2.png";
 import image2 from "../public/images/Services/services3.png";
-
 import mobImage from "../public/images/MobileImages/Services_1_mobile.jpg";
 import mobImage1 from "../public/images/MobileImages/Services_2_mobile.jpg";
 import mobImage2 from "../public/images/MobileImages/Services_3_mobile.jpg";
 
-import Image from "next/image";
-import { useWindowWidth } from "../components/WindowWidth";
-import Slider from "react-slick";
 function OurServices() {
   const windowWidth = useWindowWidth();
   const slider = React.useRef(null);

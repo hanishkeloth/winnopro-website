@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import image from "../public/images/Image6.png";
-// import Slide from "../../Components/Slide/Index";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import CustomHeader from "../components/CustomHeader";
+import Image from "next/image";
+import Slider from "react-slick";
+
 import technology1 from "../public/Icons/winnopro_icon_Technolgies - 1.svg";
 import technology2 from "../public/Icons/winnopro_icon_Technolgies - 2.svg";
 import technology3 from "../public/Icons/winnopro_icon_Technolgies - 3.svg";
@@ -10,12 +15,6 @@ import technology6 from "../public/Icons/winnopro_icon_Technolgies - 6.svg";
 import technology7 from "../public/Icons/winnopro_icon_Technolgies - 7.svg";
 import technology8 from "../public/Icons/winnopro_icon_Technolgies - 8.svg";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import CustomHeader from "../components/CustomHeader";
-import Image from "next/image";
-import Slider from "react-slick";
 const Technologies = () => {
   const slider = React.useRef(null);
 
@@ -100,13 +99,15 @@ const Technologies = () => {
     >
       <div
         id="technologiesContent"
-        className="w-screen-xl mt-[100px] px-4 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 "
+        className="w-screen-xl mt-[100px] px-0 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 "
       >
-        <CustomHeader
-          classes=" text-white "
-          sub="TECHNOLOGIES"
-          main="Technologies We Work with"
-        />
+        <div className="px-4 sl:px-0 ">
+          <CustomHeader
+            classes=" text-white "
+            sub="TECHNOLOGIES"
+            main="Technologies We Work with"
+          />
+        </div>
         <Slider ref={slider} {...settings}>
           {Object.keys(data).map((item, i) => (
             <div
@@ -120,22 +121,22 @@ const Technologies = () => {
             >
               <div
                 key={i}
-                className="mt-8 mb-10 mx-2 h-max grid grid-cols-2 gap-2 lg:gap-2 md:mt-10 md:grid-cols-2 md:gap-4 lg:grid-cols-4"
+                className="mt-8 mb-10 mx-1  h-max grid grid-cols-2 gap-2 lg:gap-2 md:mt-10 md:grid-cols-2 md:gap-4 lg:grid-cols-4"
               >
                 {data[item].map((card, key) => (
                   <div
                     key={key}
-                    className="flex flex-col font-cambria lg:h-[485px] h-[360px] items-center p-2 lg:px-2 lg:py-6 gap-2 lg:gap-4 bg-wp-lGray rounded-xl "
+                    className="flex flex-col font-cambria lg:h-[485px] h-[310px] items-center p-2 lg:px-2 lg:py-6 gap-1 lg:gap-4 bg-wp-lGray rounded-xl "
                   >
-                    <span className="shrink-0  sm:block lg:block rounded-full p-1">
-                      <Image src={card.icon} className="w-[120px] h-[120px] " />
+                    <span className="shrink-0  sm:block lg:block rounded-full ">
+                      <Image src={card.icon} className="w-[120px] h-[120px]" />
                     </span>
-                    <h2 className="text-xl lg:text-[24px] text-center text-wp-gray font-bold">
+                    <h2 className="text-[14px] lg:text-[24px] text-center text-wp-gray font-bold">
                       {card.topic}
                     </h2>
                     {card.items.map((i) => {
                       return (
-                        <h2 className="text-lg lg:text-[20px] text-wp-gray max-w-[20ch] font-medium">
+                        <h2 className="text-[12px] lg:text-[20px] text-wp-gray max-w-[20ch] font-medium">
                           {i}
                         </h2>
                       );

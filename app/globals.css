@@ -1,7 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url(//db.onlinewebfonts.com/c/758d40d7ca52e3a9bff2655c7ab5703c?family=Cambria);
+@font-face {
+  font-family: "Cambria2";
+  src: url("../public/fonts/Cambria.ttf");
+}
 .dot {
   opacity: 0;
 }

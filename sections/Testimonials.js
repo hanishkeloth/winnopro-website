@@ -73,6 +73,7 @@ const Testimonials = () => {
       },
     ],
   ];
+
   const settings = {
     dots: true,
     infinite: true,
@@ -91,6 +92,7 @@ const Testimonials = () => {
     },
     dotsClass: "slick-dots slick-thumb",
   };
+
   return (
     <div
       id="testimonials"
@@ -118,7 +120,7 @@ const Testimonials = () => {
                     <h1 className="text-[18px] text-main-orange mt-5 lg:mt-10 font-bold lg:text-card ">
                       {name}
                     </h1>
-                    <h1 className="text-wp-gray text-[16px] lg:text-description">
+                    <h1 className="text-wp-gray text-[13px] lg:text-description">
                       {location}
                     </h1>
                   </div>
