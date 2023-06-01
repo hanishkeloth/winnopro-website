@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </Head>
-      <body className=" font-cambria ">
+      <body className=" scrollbar font-cambria ">
         <NavBar />
         {children}
       </body>

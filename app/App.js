@@ -7,10 +7,12 @@ import Systematics from "@/sections/Systematics";
 import Team from "@/sections/Team";
 import Technologies from "@/sections/Technologies";
 import Testimonials from "@/sections/Testimonials";
+
 import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useWindowWidth } from "@/components/WindowWidth";
+
 function App() {
   gsap.registerPlugin(ScrollTrigger);
   const windowWidth = useWindowWidth();
@@ -88,6 +90,7 @@ function App() {
   useEffect(() => {
     gsap.to("#services", {
       y: -280,
+      opacity: 1,
       duration: 1,
       scrollTrigger: {
         trigger: "#services",
@@ -150,7 +153,7 @@ function App() {
       duration: 1,
       scrollTrigger: {
         trigger: "#contact",
-        //  markers: true,
+        //markers: true,
         start: "top 98%",
         end: "top 48%",
         scrub: 1,

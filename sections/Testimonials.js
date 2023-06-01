@@ -3,6 +3,7 @@ import CustomHeader from "../components/CustomHeader";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ClientSlide from "./ClientSlide";
 
 const Testimonials = () => {
   const slider = React.useRef(null);
@@ -130,6 +131,7 @@ const Testimonials = () => {
           </div>
         ))}
       </Slider>
+      <ClientSlide />
     </div>
   );
 };
