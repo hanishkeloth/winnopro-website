@@ -1,3 +1,4 @@
+"use client";
 import AboutUs from "@/sections/About";
 import ContactForm from "@/sections/ContactUs";
 import Footer from "@/sections/Footer";
@@ -12,6 +13,7 @@ import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useWindowWidth } from "@/components/WindowWidth";
+import NavBar from "@/components/Navbar";
 
 function App() {
   gsap.registerPlugin(ScrollTrigger);
@@ -163,6 +165,7 @@ function App() {
 
   return (
     <>
+      <NavBar />
       <HomeSection />
       <AboutUs />
       <OurServices />

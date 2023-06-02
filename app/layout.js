@@ -1,7 +1,4 @@
-"use client";
 import "./globals.css";
-import NavBar from "@/components/Navbar";
-import { Metadata } from "next";
 import Head from "next/head";
 export const metadata = {
   title: "Winnopro",
@@ -19,10 +16,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </Head>
-      <body className=" scrollbar font-cambria ">
-        <NavBar />
-        {children}
-      </body>
+      <body className=" scrollbar font-cambria ">{children}</body>
     </html>
   );
 }
