@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import logo from "../public/images/HeaderImages/wplogo.png";
 import Image from "next/image";
 import { useWindowWidth } from "./WindowWidth";
+import Link from "next/link";
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
@@ -10,32 +11,32 @@ export default function NavBar() {
   const links = [
     {
       label: "Home",
-      url: "home",
+      url: "#",
     },
     {
       label: "About Us",
-      url: "about",
+      url: "#about",
     },
     {
       label: "Services",
-      url: "services",
+      url: "#services",
     },
     {
       label: "Systematics ",
-      url: "systematics ",
+      url: "#systematics ",
     },
     {
       label: "Technologies ",
-      url: "technologies ",
+      url: "#technologies ",
     },
     {
       label: "Team ",
-      url: "team ",
+      url: "#team ",
     },
 
     {
       label: "Contact ",
-      url: "contact ",
+      url: "#contact ",
     },
   ];
 
@@ -117,7 +118,7 @@ export default function NavBar() {
             <ul className="items-center mt-20 lg:mt-0 md:mt-0 sm:mt- justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               {links.map((item, index) => {
                 return (
-                  <li
+                  <Link
                     key={index}
                     onClick={() => handleClickScroll(item.url)}
                     // onClick={() => setActiveLink(url)}
@@ -128,9 +129,12 @@ export default function NavBar() {
                         ? "ml-10 mt-10 text-white"
                         : " text-gray-600 "
                     } hover:text-orange`}
+                    href={item.url} 
                   >
+                      
                     <h1>{item.label}</h1>
-                  </li>
+                    </Link>
+                  
                 );
               })}
             </ul>

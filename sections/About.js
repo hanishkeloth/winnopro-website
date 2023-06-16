@@ -31,8 +31,8 @@ function AboutUs() {
       ScrollTrigger.create({
         trigger: section,
         start: "top 80%",
-        end: "bottom 60%",
-        //  markers: true,
+        end: "bottom 38%",
+        // markers: true,
         onEnter: () =>
           gsap.to(elems, {
             y: 0,
