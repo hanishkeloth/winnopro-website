@@ -1,6 +1,6 @@
 import React from "react";
-import CustomHeader from "../components/CustomHeader";
-import GoogleMapComponent from "@/components/GoogleMap";
+import CustomHeader from "../../components/Customheader/CustomHeader";
+import GoogleMapComponent from "@/components/GoogleMap/GoogleMap";
 
 const ContactForm = () => {
   return (

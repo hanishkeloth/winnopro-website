@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import image from "../public/images/Image6.png";
+import image from "../../public/images/Image6.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CustomHeader from "../components/CustomHeader";
+import CustomHeader from "../../components/Customheader/CustomHeader";
 import Image from "next/image";
 import Slider from "react-slick";
 
-import technology1 from "../public/Icons/winnopro_icon_Technolgies - 1.svg";
-import technology2 from "../public/Icons/winnopro_icon_Technolgies - 2.svg";
-import technology3 from "../public/Icons/winnopro_icon_Technolgies - 3.svg";
-import technology4 from "../public/Icons/winnopro_icon_Technolgies - 4.svg";
-import technology5 from "../public/Icons/winnopro_icon_Technolgies - 5.svg";
-import technology6 from "../public/Icons/winnopro_icon_Technolgies - 6.svg";
-import technology7 from "../public/Icons/winnopro_icon_Technolgies - 7.svg";
-import technology8 from "../public/Icons/winnopro_icon_Technolgies - 8.svg";
+import technology1 from "../../public/Icons/winnopro_icon_Technolgies - 1.svg";
+import technology2 from "../../public/Icons/winnopro_icon_Technolgies - 2.svg";
+import technology3 from "../../public/Icons/winnopro_icon_Technolgies - 3.svg";
+import technology4 from "../../public/Icons/winnopro_icon_Technolgies - 4.svg";
+import technology5 from "../../public/Icons/winnopro_icon_Technolgies - 5.svg";
+import technology6 from "../../public/Icons/winnopro_icon_Technolgies - 6.svg";
+import technology7 from "../../public/Icons/winnopro_icon_Technolgies - 7.svg";
+import technology8 from "../../public/Icons/winnopro_icon_Technolgies - 8.svg";
 
 const Technologies = () => {
   const slider = React.useRef(null);

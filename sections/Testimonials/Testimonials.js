@@ -1,9 +1,9 @@
 import React from "react";
-import CustomHeader from "../components/CustomHeader";
+import CustomHeader from "../../components/Customheader/CustomHeader";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ClientSlide from "./ClientSlide";
+import ClientSlide from "../ClientSlide/ClientSlide";
 
 const Testimonials = () => {
   const slider = React.useRef(null);
@@ -97,10 +97,10 @@ const Testimonials = () => {
   return (
     <div
       id="testimonials"
-      className="w-screen-xl bg-white -mb-[300px]  px-4 py-8 min-h-screen sm:px-6 sm:py-12 lg:px-24 lg:py-14 font-cambria "
+      className="w-screen-xl bg-white -mb-[300px]  px-4 py-8 min-h-[70vh] sm:px-6 sm:py-12 lg:px-24 lg:py-14 font-cambria "
     >
-      <CustomHeader sub="TESTIMONIALS" main="What Clients Say" />
-      <Slider ref={slider} {...settings}>
+      {/* <CustomHeader sub="TESTIMONIALS" main="What Clients Say" /> */}
+      {/* <Slider ref={slider} {...settings}>
         {Object.keys(data).map((item, i) => (
           <div
             onWheel={(event) => {
@@ -130,7 +130,7 @@ const Testimonials = () => {
             </div>
           </div>
         ))}
-      </Slider>
+      </Slider> */}
       <ClientSlide />
     </div>
   );

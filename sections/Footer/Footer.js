@@ -1,11 +1,11 @@
 import React from "react";
-import logo from "../public/images/HeaderImages/winnopro_horizontal.png";
+import logo from "../../public/images/HeaderImages/winnopro_horizontal.png";
 import Image from "next/image";
-import twitter from "../public/Icons/twitter.svg";
-import facebook from "../public/Icons/facebook (1).svg";
-import lilnkedin from "../public/Icons/linkedin.svg";
-import phone from "../public/Icons/phone.svg";
-import mail from "../public/Icons/mail.svg";
+import twitter from "../../public/Icons/twitter.svg";
+import facebook from "../../public/Icons/facebook (1).svg";
+import lilnkedin from "../../public/Icons/linkedin.svg";
+import phone from "../../public/Icons/phone.svg";
+import mail from "../../public/Icons/mail.svg";
 
 const Footer = () => {
   const data = [
@@ -14,23 +14,45 @@ const Footer = () => {
       address:
         "No.36, ‘ANUGRAHA’, 4th A Cross, Subedarpalya, Yeshwanthpur, Bangalore, 560022",
     },
-    {
-      location: "UK",
-      address: "43 George Street SOUTHAMPTON SO17 1EU",
-    },
-    {
-      location: "Dubai",
-      address: " Rashed Boulevard, Downtown Dubai, Dubai, 123234",
-    },
+    // {
+    //   location: "UK",
+    //   address: "43 George Street SOUTHAMPTON SO17 1EU",
+    // },
+    // {
+    //   location: "Dubai",
+    //   address: " Rashed Boulevard, Downtown Dubai, Dubai, 123234",
+    // },
   ];
   const navigation = [
-    " Home",
-    "About Us",
-    " Services",
-    "Systematics",
-    "Technologies",
-    "Team",
-    "Contact",
+    {
+      label: "Home",
+      url: "#",
+    },
+    {
+      label: "About Us",
+      url: "#about",
+    },
+    {
+      label: "Services",
+      url: "#services",
+    },
+    {
+      label: "Systematics ",
+      url: "#systematics ",
+    },
+    {
+      label: "Technologies ",
+      url: "#technologies ",
+    },
+    {
+      label: "Team ",
+      url: "#team ",
+    },
+
+    {
+      label: "Contact ",
+      url: "#contact ",
+    },
   ];
   return (
     <>
@@ -45,7 +67,7 @@ const Footer = () => {
             </div>
             <div className="grid mt-6 text-[16px] font-medium grid-cols-1 lg:grid-cols-2">
               {navigation.map((data) => {
-                return <p>{data}</p>;
+                return <a href={data.url}>{data.label}</a>;
               })}
             </div>
           </div>
@@ -64,16 +86,30 @@ const Footer = () => {
               <p className="text-[20px] mb-5 font-semibold">Contact</p>
               <div className="flex space-x-2 ">
                 <Image src={phone} className=" " />
-                <p className="text-[16px] font-medium">+91 990049908</p>
+                <a
+                  href="tel:+91 990049908"
+                  className="text-[16px] hover:underline font-medium"
+                >
+                  +91 990049908
+                </a>
               </div>
               <div className="flex space-x-2 ">
                 <Image src={mail} className=" " />
-                <p className="text-[16px] font-medium">hanish@winnopro.tech</p>
+                <a
+                  href="/tech@winnopro.tech"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = "mailto:tech@winnopro.tech";
+                  }}
+                  className="text-[16px] hover:underline font-medium"
+                >
+                  tech@winnopro.tech
+                </a>
               </div>
               <ul className="flex gap-6 mt-8">
                 <li>
                   <a
-                    href="/"
+                    href="https://www.facebook.com/Winnopro/"
                     rel="noreferrer"
                     target="_blank"
                     className="text-gray-700 transition hover:opacity-75"
@@ -86,7 +122,7 @@ const Footer = () => {
 
                 <li>
                   <a
-                    href="/"
+                    href="https://twitter.com/winnoprotech"
                     rel="noreferrer"
                     target="_blank"
                     className="text-gray-700 transition hover:opacity-75"
@@ -99,12 +135,12 @@ const Footer = () => {
 
                 <li>
                   <a
-                    href="/"
+                    href="https://www.linkedin.com/company/winnopro/"
                     rel="noreferrer"
                     target="_blank"
                     className=" text-gray-800 transition hover:opacity-75"
                   >
-                    <span className="sr-only">GitHub</span>
+                    <span className="sr-only">LinkedIn</span>
 
                     <Image src={lilnkedin} />
                   </a>

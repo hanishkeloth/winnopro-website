@@ -1,19 +1,19 @@
 "use client";
-import AboutUs from "@/sections/About";
-import ContactForm from "@/sections/ContactUs";
-import Footer from "@/sections/Footer";
-import HomeSection from "@/sections/Home";
-import OurServices from "@/sections/Services";
-import Systematics from "@/sections/Systematics";
-import Team from "@/sections/Team";
-import Technologies from "@/sections/Technologies";
-import Testimonials from "@/sections/Testimonials";
+import AboutUs from "@/sections/About/About";
+import ContactForm from "@/sections/ContactUs/ContactUs";
+import Footer from "@/sections/Footer/Footer";
+import HomeSection from "@/sections/Home/Home";
+import OurServices from "@/sections/Services/Services";
+import Systematics from "@/sections/Systematics/Systematics";
+import Team from "@/sections/Team/Team";
+import Technologies from "@/sections/Technologies/Technologies";
+import Testimonials from "@/sections/Testimonials/Testimonials";
 
 import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useWindowWidth } from "@/components/WindowWidth";
-import NavBar from "@/components/Navbar";
+import { useWindowWidth } from "@/app/WindowWidth";
+import NavBar from "@/components/Navbar/Navbar";
 
 function App() {
   gsap.registerPlugin(ScrollTrigger);

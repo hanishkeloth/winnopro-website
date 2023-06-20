@@ -1,16 +1,16 @@
 import Image from "next/image";
-import { useWindowWidth } from "../components/WindowWidth";
+import { useWindowWidth } from "../../app/WindowWidth";
 import Slider from "react-slick";
 import React, { useRef } from "react";
 
-import servicesicon from "../public/Icons/services.png";
-import CustomHeader from "../components/CustomHeader";
-import image from "../public/images/Services/image10.png";
-import image1 from "../public/images/Services/services2.png";
-import image2 from "../public/images/Services/services3.png";
-import mobImage from "../public/images/MobileImages/Services_1_mobile.jpg";
-import mobImage1 from "../public/images/MobileImages/Services_2_mobile.jpg";
-import mobImage2 from "../public/images/MobileImages/Services_3_mobile.jpg";
+import servicesicon from "../../public/Icons/services.png";
+import CustomHeader from "../../components/Customheader/CustomHeader";
+import image from "../../public/images/Services/image10.png";
+import image1 from "../../public/images/Services/services2.png";
+import image2 from "../../public/images/Services/services3.png";
+import mobImage from "../../public/images/MobileImages/Services_1_mobile.jpg";
+import mobImage1 from "../../public/images/MobileImages/Services_2_mobile.jpg";
+import mobImage2 from "../../public/images/MobileImages/Services_3_mobile.jpg";
 
 function OurServices() {
   const windowWidth = useWindowWidth();
@@ -129,16 +129,14 @@ function OurServices() {
               key={{ i }}
               className=" lg:flex mb-10 lg:items-center xs:flex xs:flex-col xs:items-end "
             >
-              <div className=" lg:w-9/12 w-full font-cambria bg-white my-5 px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-8 ml-[1px] ">
+              <div className=" xl:w-9/12 max-w-[1000px]  w-full font-cambria bg-white my-5 px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-8 ml-[1px] ">
                 {data[item].map((i, key) => (
                   <a
                     key={key}
                     href="#"
-                    className="relative block overflow-hidden mb-5 "
+                    className="relative block  overflow-hidden xxl:mb-10 mb-5 "
                   >
-                    <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
-
-                    <div className="flex space-x-5 items-center ">
+                    <div className="flex space-x-5  items-center ">
                       <div className="block sm:shrink-0">
                         <Image
                           alt=""
@@ -147,7 +145,7 @@ function OurServices() {
                         />
                       </div>
                       <div>
-                        <h3 className=" text-mobCardTitle  lg:text-cardtitle font-bold text-wp-gray ">
+                        <h3 className=" text-mobCardTitle   lg:text-cardtitle font-bold text-wp-gray ">
                           {i.topic}
                         </h3>
                       </div>
@@ -163,7 +161,7 @@ function OurServices() {
               </div>
               <div
                 //  className=" lg:bg-cover lg:bg-no-repeat lg:bg-center lg:h-[120vh]"
-                className=" xs:w-10/12 lg:h-[55%] "
+                className=" xs:w-10/12 xxl:h-[550px] xxl:w-[550px] lg:h-[55%] "
               >
                 <Image
                   className=" xs:-mt-10  lg:-ml-10 object-contain lg:object-cover "

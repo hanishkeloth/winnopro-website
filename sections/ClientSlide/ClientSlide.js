@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from "react";
 
-import image1 from "../public/images/Clients/1614339063621.png";
-import image2 from "../public/images/Clients/Cricket_South_Africa.png";
-import image3 from "../public/images/Clients/em.png";
-import image4 from "../public/images/Clients/hp.png";
-import image5 from "../public/images/Clients/korea.png";
-import image6 from "../public/images/Clients/noshy.png";
-import image7 from "../public/images/Clients/palcare.png";
-import image8 from "../public/images/Clients/pipli.png";
+import image1 from "../../public/images/Clients/1614339063621.png";
+import image2 from "../../public/images/Clients/Cricket_South_Africa.png";
+import image3 from "../../public/images/Clients/em.png";
+import image4 from "../../public/images/Clients/hp.png";
+import image5 from "../../public/images/Clients/korea.png";
+import image6 from "../../public/images/Clients/noshy.png";
+import image7 from "../../public/images/Clients/palcare.png";
+import image8 from "../../public/images/Clients/pipli.png";
 import Image from "next/image";
 const clienSlide = ({ children }) => {
   const containerRef = useRef(null);

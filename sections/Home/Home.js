@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import Slide from "../components/Slide";
+import Slide from "../../components/Slide/Slide";
 import "./styles/Home.css";
 import Image from "next/image";
-import { useWindowWidth } from "@/components/WindowWidth";
+import { useWindowWidth } from "@/app/WindowWidth";
 
-import image1 from "../public/images/SlideImages/spotlight_1.png";
-import image2 from "../public/images/SlideImages/spotlight-2.jpeg";
-import image3 from "../public/images/SlideImages/spotlight_3.png";
-import mobImage from "../public/images/MobileImages/spotlight_1_mobile.jpg";
-import mobImage2 from "../public/images/MobileImages/spotlight_2_mobile.jpg";
-import mobImage3 from "../public/images/MobileImages/spotlight_3_mobile.jpg";
+import image1 from "../../public/images/SlideImages/spotlight_1.png";
+import image2 from "../../public/images/SlideImages/spotlight-2.jpeg";
+import image3 from "../../public/images/SlideImages/spotlight_3.png";
+import mobImage from "../../public/images/MobileImages/spotlight_1_mobile.jpg";
+import mobImage2 from "../../public/images/MobileImages/spotlight_2_mobile.jpg";
+import mobImage3 from "../../public/images/MobileImages/spotlight_3_mobile.jpg";
 
 const data = [
   {

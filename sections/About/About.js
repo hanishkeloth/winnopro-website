@@ -2,11 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { AboutUsData } from "@/data/StaticData";
-import { useWindowWidth } from "@/components/WindowWidth";
-
-import image from "../public/images/aboutus.png";
-import imageMob from "../public/images/aboutus_mobile.jpg";
-import CustomHeader from "../components/CustomHeader";
+import { useWindowWidth } from "@/app/WindowWidth";
+import image from "../../public/images/aboutus.png";
+import imageMob from "../../public/images/aboutus_mobile.jpg";
+import CustomHeader from "../../components/Customheader/CustomHeader";
 
 function AboutUs() {
   const windowWidth = useWindowWidth();

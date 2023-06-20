@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import logo from "../public/images/HeaderImages/wplogo.png";
+import logo from "../../public/images/HeaderImages/wplogo.png";
 import Image from "next/image";
-import { useWindowWidth } from "./WindowWidth";
+import { useWindowWidth } from "../../app/WindowWidth";
 import Link from "next/link";
 
 export default function NavBar() {
@@ -42,26 +42,26 @@ export default function NavBar() {
 
   const handleClickScroll = (url) => {
     const element = document.getElementById(url);
-    console.log(element, url, "elem");
+    //  console.log(element, url, "elem");
     setActiveLink(url);
-    if (element) {
-      // 👇 Will scroll smoothly to the top of the next section
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    // if (element) {
+    //   // 👇 Will scroll smoothly to the top of the next section
+    //   element.scrollIntoView({ behavior: "smooth" });
+    // }
   };
 
   const windowWidth = useWindowWidth();
   useEffect(() => {
-    if (windowWidth < 650) {
+    if (windowWidth < 1020) {
       setNavbar(false);
     }
   }, [windowWidth]);
 
   return (
     <div className="w-full bg-white sticky shadow-md z-20 top-0 text-description font-cambria text-wp-gray ">
-      <div className="justify-between px-4 mx-auto lg:max-w-screen lg:py-4 md:items-center md:flex md:px-8 lg:px-14">
+      <div className="justify-between px-4 mx-auto lg:max-w-screen lg:py-4 lg:items-center lg:flex md:px-8 lg:px-14">
         <div>
-          <div className="flex items-center justify-between md:block">
+          <div className="flex items-center justify-between lg:block">
             <Image
               src={logo}
               alt="/"
@@ -69,7 +69,7 @@ export default function NavBar() {
               height="70"
               className="cursor-pointer object-contain "
             />
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <button
                 className="p-2 text-wpGray rounded-md outline-none "
                 onClick={() => setNavbar(!navbar)}
@@ -109,13 +109,13 @@ export default function NavBar() {
         </div>
         <div>
           <div
-            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+            className={`flex-1 justify-self-center pb-3 mt-8 lg:block lg:pb-0 lg:mt-0 ${
               navbar
                 ? "block w-[280px] h-screen bg-sec-blue absolute right-0 -top-8 "
                 : "hidden"
             }`}
           >
-            <ul className="items-center mt-20 lg:mt-0 md:mt-0 sm:mt- justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+            <ul className="items-center mt-20 md:mt-0 justify-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0">
               {links.map((item, index) => {
                 return (
                   <Link
@@ -129,12 +129,10 @@ export default function NavBar() {
                         ? "ml-10 mt-10 text-white"
                         : " text-gray-600 "
                     } hover:text-orange`}
-                    href={item.url} 
+                    href={item.url}
                   >
-                      
                     <h1>{item.label}</h1>
-                    </Link>
-                  
+                  </Link>
                 );
               })}
             </ul>

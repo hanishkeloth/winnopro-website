@@ -1,16 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import CustomHeader from "../components/CustomHeader";
+import CustomHeader from "../../components/Customheader/CustomHeader";
 import Image from "next/image";
 
-import image from "../public/images/methodology.png";
-import methodology1 from "../public/Icons/winnopro_icon_Methodology- 1.svg";
-import methodology2 from "../public/Icons/winnopro_icon_Methodology- 2.svg";
-import methodology3 from "../public/Icons/winnopro_icon_Methodology- 3.svg";
-import methodology4 from "../public/Icons/winnopro_icon_Methodology- 4.svg";
-import methodology5 from "../public/Icons/winnopro_icon_Methodology- 5.svg";
-import methodology6 from "../public/Icons/winnopro_icon_Methodology- 6.svg";
+import image from "../../public/images/methodology.png";
+import methodology1 from "../../public/Icons/winnopro_icon_Methodology- 1.svg";
+import methodology2 from "../../public/Icons/winnopro_icon_Methodology- 2.svg";
+import methodology3 from "../../public/Icons/winnopro_icon_Methodology- 3.svg";
+import methodology4 from "../../public/Icons/winnopro_icon_Methodology- 4.svg";
+import methodology5 from "../../public/Icons/winnopro_icon_Methodology- 5.svg";
+import methodology6 from "../../public/Icons/winnopro_icon_Methodology- 6.svg";
 
 const Systematics = () => {
   const data = [
