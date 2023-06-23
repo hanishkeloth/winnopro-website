@@ -6,7 +6,6 @@ function Slide({ children, data, currentValue }) {
   const [current, setCurrent] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
   let timeOut = null;
-  console.log(data);
   useEffect(() => {
     timeOut =
       autoPlay &&
@@ -25,7 +24,6 @@ function Slide({ children, data, currentValue }) {
   const slideLeft = () => {
     setCurrent(current === 0 ? data.length - 1 : current - 1);
   };
-  console.log(current);
 
   // const [touchStart, setTouchStart] = useState(null);
   // const [touchEnd, setTouchEnd] = useState(null);

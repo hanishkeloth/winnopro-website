@@ -10,14 +10,18 @@ import Technologies from "@/sections/Technologies/Technologies";
 import Testimonials from "@/sections/Testimonials/Testimonials";
 
 import { gsap } from "gsap";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useWindowWidth } from "@/app/WindowWidth";
+import { useWindowWidth } from "@/app/Helpers/WindowWidth";
 import NavBar from "@/components/Navbar/Navbar";
+import { StatusModal } from "@/sections/StatusModal/StatusModal";
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [success, setSuccess] = useState("");
+  console.log(success, "success");
   gsap.registerPlugin(ScrollTrigger);
-  const windowWidth = useWindowWidth();
+
   useEffect(() => {
     gsap.to("#home", {
       opacity: 0.3,
@@ -163,6 +167,11 @@ function App() {
     });
   }, []);
 
+  const handleSuccess = (data) => {
+    setIsModalOpen(true);
+    setSuccess(data);
+  };
+
   return (
     <>
       <NavBar />
@@ -173,8 +182,14 @@ function App() {
       <Technologies />
       <Team />
       <Testimonials />
-      <ContactForm />
+      <ContactForm isSuccess={(data) => handleSuccess(data)} />
       <Footer />
+      {isModalOpen && (
+        <StatusModal
+          isSuccess={success}
+          handleClose={() => setIsModalOpen(false)}
+        />
+      )}
     </>
   );
 }

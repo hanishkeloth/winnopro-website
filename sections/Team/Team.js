@@ -120,7 +120,7 @@ const Team = () => {
                   >
                     <div
                       // className=" lg:bg-cover lg:bg-no-repeat lg:bg-center lg:h-[120vh]"
-                      className="bg-green h-9/12 w-9/12 top-5 left-5 relative "
+                      className="bg-green h-10/12 w-10/12 sm:h-9/12 sm:w-9/12 top-2 left-2 sm:top-4 sm:left-4 relative "
                     >
                       <Image
                         className="w-full h-full object-cover "

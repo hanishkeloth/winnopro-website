@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Slide from "../../components/Slide/Slide";
 import "./styles/Home.css";
 import Image from "next/image";
-import { useWindowWidth } from "@/app/WindowWidth";
+import { useWindowWidth } from "@/app/Helpers/WindowWidth";
 
 import image1 from "../../public/images/SlideImages/spotlight_1.png";
 import image2 from "../../public/images/SlideImages/spotlight-2.jpeg";

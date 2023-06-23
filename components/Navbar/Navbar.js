@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "../../public/images/HeaderImages/wplogo.png";
 import Image from "next/image";
-import { useWindowWidth } from "../../app/WindowWidth";
+import { useWindowWidth } from "../../app/Helpers/WindowWidth";
 import Link from "next/link";
 
 export default function NavBar() {
@@ -115,7 +115,7 @@ export default function NavBar() {
                 : "hidden"
             }`}
           >
-            <ul className="items-center mt-20 md:mt-0 justify-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0">
+            <ul className="items-center mt-20 ml-10 md:mt-0 justify-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0">
               {links.map((item, index) => {
                 return (
                   <Link

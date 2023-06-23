@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useWindowWidth } from "../../app/WindowWidth";
+import { useWindowWidth } from "../../app/Helpers/WindowWidth";
 import Slider from "react-slick";
 import React, { useRef } from "react";
 

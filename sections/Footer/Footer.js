@@ -54,6 +54,20 @@ const Footer = () => {
       url: "#contact ",
     },
   ];
+  const social = [
+    {
+      icon: facebook,
+      link: "https://www.facebook.com/Winnopro/",
+    },
+    {
+      icon: twitter,
+      link: "https://twitter.com/winnoprotech",
+    },
+    {
+      icon: lilnkedin,
+      link: "https://www.linkedin.com/company/winnopro/",
+    },
+  ];
   return (
     <>
       <div className="w-screen-xl text-description text-white font-cambria bg-sec-blue px-4 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 ">
@@ -107,44 +121,20 @@ const Footer = () => {
                 </a>
               </div>
               <ul className="flex gap-6 mt-8">
-                <li>
-                  <a
-                    href="https://www.facebook.com/Winnopro/"
-                    rel="noreferrer"
-                    target="_blank"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    <span className="sr-only">Facebook</span>
-
-                    <Image src={facebook} />
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="https://twitter.com/winnoprotech"
-                    rel="noreferrer"
-                    target="_blank"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    <span className="sr-only">Twitter</span>
-
-                    <Image src={twitter} />
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="https://www.linkedin.com/company/winnopro/"
-                    rel="noreferrer"
-                    target="_blank"
-                    className=" text-gray-800 transition hover:opacity-75"
-                  >
-                    <span className="sr-only">LinkedIn</span>
-
-                    <Image src={lilnkedin} />
-                  </a>
-                </li>
+                {social.map((item, index) => {
+                  return (
+                    <li key={index}>
+                      <a
+                        href={item.link}
+                        rel="noreferrer"
+                        target="_blank"
+                        className="text-gray-700 transition hover:opacity-75"
+                      >
+                        <Image src={item.icon} />
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
