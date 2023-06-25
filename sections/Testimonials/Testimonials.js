@@ -97,7 +97,7 @@ const Testimonials = () => {
   return (
     <div
       id="testimonials"
-      className="w-screen-xl bg-white -mb-[300px]  px-4 py-8 min-h-[70vh] sm:px-6 sm:py-12 lg:px-24 lg:py-14 font-cambria "
+      className="w-screen-xl bg-white -mb-[300px]  px-4 py-8 h-[50vh] lg:min-h-[70vh] sm:px-6 sm:py-12 lg:px-24 lg:py-14 font-cambria "
     >
       {/* <CustomHeader sub="TESTIMONIALS" main="What Clients Say" /> */}
       {/* <Slider ref={slider} {...settings}>
