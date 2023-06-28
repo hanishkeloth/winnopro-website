@@ -49,7 +49,7 @@ const clienSlide = ({ children }) => {
   return (
     <div
       ref={containerRef}
-      className="flex items-center space-x-20 p-10 bg-white overflow-x-auto scrollbar-landscape"
+      className="flex  items-center space-x-20 p-10 bg-white overflow-x-auto scrollbar-landscape"
       style={{ scrollBehavior: "smooth" }}
     >
       {images.map((image) => {

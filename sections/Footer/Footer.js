@@ -12,7 +12,7 @@ const Footer = () => {
     {
       location: "India",
       address:
-        "No.36, ‘ANUGRAHA’, 4th A Cross, Subedarpalya, Yeshwanthpur, Bangalore, 560022",
+        "22nd Floor, 26/1,WTC, BRIGADE GATEWAY, Dr Rajkumar Rd, Malleshwaram, Bengaluru, Karnataka 560055",
     },
     // {
     //   location: "UK",
@@ -104,7 +104,7 @@ const Footer = () => {
                   href="tel:+91 990049908"
                   className="text-[16px] hover:underline font-medium"
                 >
-                  +91 990049908
+                  +1 321-499-9007
                 </a>
               </div>
               <div className="flex space-x-2 ">
