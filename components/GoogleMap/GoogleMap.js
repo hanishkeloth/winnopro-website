@@ -17,8 +17,8 @@ const options = {
 
 export default function GoogleMapComponent() {
   const { isLoaded, loadError } = useLoadScript({
-    //googleMapsApiKey: process.env.REACT_APP_googleMapsApiKey,
-    googleMapsApiKey: "",
+    googleMapsApiKey: process.env.REACT_APP_googleMapsApiKey,
+    //googleMapsApiKey: "",
     libraries,
   });
 
@@ -36,8 +36,8 @@ export default function GoogleMapComponent() {
       mapContainerStyle={mapContainerStyle}
       zoom={14} 
       center={{
-        lat: 35.64860429083234,
-        lng: 138.57693376912908,
+        lat: 13.011590,
+        lng: 77.555010,
       }} 
       options={options}
       onLoad={onMapLoad}
