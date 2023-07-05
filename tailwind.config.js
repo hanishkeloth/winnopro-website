@@ -7,13 +7,39 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: { min: "140px", max: "1020px" },
+      sl: { min: "640px", max: "2020px" },
+      xxl: "1600px",
+      // => @media (min-width: 640px) { ... }
+
+      sm: "640px",
+      // => @media (min-width: 640px) { ... }
+
+      md: "768px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      xl: "1280px",
+      // => @media (min-width: 1280px) { ... }
+
+      "2xl": "1536px",
+      // => @media (min-width: 1536px) { ... }
+    },
     fontSize: {
-      header: "55px",
-      subHeader: "24px",
+      header: "50px",
+      subHeader: "20px",
       description: "20px",
       card: "28px",
       cardtitle: "30px",
       cardDesc: "18px",
+      mobHeader: "35px",
+      mobsubHeader: "19px",
+      mobDescription: "15px",
+      mobCard: "20px",
+      mobCardTitle: "19px",
     },
     extend: {
       colors: {
@@ -105,9 +131,8 @@ module.exports = {
         "pink-lightest": "#ffebef",
       },
       fontFamily: {
-        cambria: ["Cambria"],
-        poppins: ["Poppins", "sans-serif"],
-        lato: ["Lato", "sans-serif"],
+        cambria: ["Cambria", "Cambria2"],
+        // lato: ["Lato", "sans-serif"],
       },
     },
   },

@@ -1,0 +1,67 @@
+.carousel_card {
+  display: flex;
+  flex: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+  transition: 0.8s ease-in-out;
+}
+
+.carousel_card-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: visible;
+  background-color: #1c5f71;
+}
+.card_image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  display: flex;
+  padding: 40px 30px;
+  align-items: center;
+  text-align: center;
+}
+
+.card_title {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  max-width: 10ch;
+  margin-left: 50px;
+}
+.card_title2 {
+  color: #1c5f71;
+  font-size: 50px;
+  font-weight: bold;
+  max-width: 20ch;
+  margin-left: 50px;
+}
+@media (min-width: 320px) and (max-width: 800px) {
+  .card_title {
+    color: white;
+    font-size: 30px;
+    margin-left: 20px;
+    max-width: 10ch;
+  }
+  .card_overlay {
+    align-items: flex-end;
+  }
+  .card_image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+}
