@@ -14,6 +14,7 @@ import technology5 from "../../public/Icons/winnopro_icon_Technolgies - 5.svg";
 import technology6 from "../../public/Icons/winnopro_icon_Technolgies - 6.svg";
 import technology7 from "../../public/Icons/winnopro_icon_Technolgies - 7.svg";
 import technology8 from "../../public/Icons/winnopro_icon_Technolgies - 8.svg";
+import Head from "next/head";
 
 const Technologies = () => {
   const slider = React.useRef(null);
