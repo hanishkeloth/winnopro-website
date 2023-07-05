@@ -85,70 +85,87 @@ const Technologies = () => {
   };
 
   return (
-    <section
-      id="technologies"
-      style={{
-        position: "relative",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundImage: `url(${image.src})`,
-        // marginBottom: "-800px",
-      }}
-      className="lg:h-[110vh] -mb-[300px] "
-    >
-      <div
-        id="technologiesContent"
-        className="w-screen-xl mt-[100px] px-0 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 "
+    <>
+      <Head>
+        <title>Technologies - Winnopro</title>
+        <meta
+          name="description"
+          content="Explore the technologies we use to deliver high-quality solutions."
+        />
+        <meta property="og:title" content="Technologies - Winnopro" />
+        <meta
+          property="og:description"
+          content="Explore the technologies we use to deliver high-quality solutions."
+        />
+      </Head>
+      <section
+        id="technologies"
+        style={{
+          position: "relative",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundImage: `url(${image.src})`,
+          // marginBottom: "-800px",
+        }}
+        className="lg:h-[110vh] -mb-[300px] "
       >
-        <div className="px-4 sl:px-0 ">
-          <CustomHeader
-            classes=" text-white "
-            sub="TECHNOLOGIES"
-            main="Technologies We Work with"
-          />
-        </div>
-        <Slider ref={slider} {...settings}>
-          {Object.keys(data).map((item, i) => (
-            <div
-              onWheel={(event) => {
-                if (event.nativeEvent.wheelDelta > 0) {
-                  slider?.current?.slickNext();
-                } else {
-                  slider?.current?.slickPrev();
-                }
-              }}
-            >
+        <div
+          id="technologiesContent"
+          className="w-screen-xl mt-[100px] px-0 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 "
+        >
+          <div className="px-4 sl:px-0 ">
+            <CustomHeader
+              classes=" text-white "
+              sub="TECHNOLOGIES"
+              main="Technologies We Work with"
+            />
+          </div>
+          <Slider ref={slider} {...settings}>
+            {Object.keys(data).map((item, i) => (
               <div
-                key={i}
-                className="mt-8 mb-10 mx-1  h-max grid grid-cols-2 gap-2 lg:gap-2 md:mt-10 md:grid-cols-2 md:gap-4 lg:grid-cols-4"
+                onWheel={(event) => {
+                  if (event.nativeEvent.wheelDelta > 0) {
+                    slider?.current?.slickNext();
+                  } else {
+                    slider?.current?.slickPrev();
+                  }
+                }}
               >
-                {data[item].map((card, key) => (
-                  <div
-                    key={key}
-                    className="flex flex-col font-cambria lg:h-[485px] h-[310px] items-center p-2 lg:px-2 lg:py-6 gap-1 lg:gap-4 bg-wp-lGray rounded-xl "
-                  >
-                    <span className="shrink-0  sm:block lg:block rounded-full ">
-                      <Image src={card.icon} className="w-[120px] h-[120px]" />
-                    </span>
-                    <h2 className="text-[14px] lg:text-[24px] text-center text-wp-gray font-bold">
-                      {card.topic}
-                    </h2>
-                    {card.items.map((i) => {
-                      return (
-                        <h2 className="text-[12px] lg:text-[20px] text-wp-gray max-w-[20ch] font-medium">
-                          {i}
-                        </h2>
-                      );
-                    })}
-                  </div>
-                ))}
+                <div
+                  key={i}
+                  className="mt-8 mb-10 mx-1  h-max grid grid-cols-2 gap-2 lg:gap-2 md:mt-10 md:grid-cols-2 md:gap-4 lg:grid-cols-4"
+                >
+                  {data[item].map((card, key) => (
+                    <div
+                      key={key}
+                      className="flex flex-col font-cambria lg:h-[485px] h-[310px] items-center p-2 lg:px-2 lg:py-6 gap-1 lg:gap-4 bg-wp-lGray rounded-xl "
+                    >
+                      <span className="shrink-0  sm:block lg:block rounded-full ">
+                        <Image
+                          src={card.icon}
+                          className="w-[120px] h-[120px]"
+                        />
+                      </span>
+                      <h2 className="text-[14px] lg:text-[24px] text-center text-wp-gray font-bold">
+                        {card.topic}
+                      </h2>
+                      {card.items.map((i) => {
+                        return (
+                          <h2 className="text-[12px] lg:text-[20px] text-wp-gray max-w-[20ch] font-medium">
+                            {i}
+                          </h2>
+                        );
+                      })}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </section>
+            ))}
+          </Slider>
+        </div>
+      </section>
+    </>
   );
 };
 

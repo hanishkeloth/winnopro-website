@@ -11,6 +11,7 @@ import image2 from "../../public/images/Services/services3.png";
 import mobImage from "../../public/images/MobileImages/Services_1_mobile.jpg";
 import mobImage1 from "../../public/images/MobileImages/Services_2_mobile.jpg";
 import mobImage2 from "../../public/images/MobileImages/Services_3_mobile.jpg";
+import Head from "next/head";
 
 function OurServices() {
   const windowWidth = useWindowWidth();
@@ -109,74 +110,92 @@ function OurServices() {
   };
 
   return (
-    <div
-      id="services"
-      className="w-screen-xl -mb-[280px] pl-9 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 bg-main-orange "
-    >
-      <CustomHeader classes=" text-white " sub="SERVICES" main="Our Services" />
-      <Slider ref={slider} {...settings}>
-        {Object.keys(data).map((item, i) => (
-          <div
-            onWheel={(event) => {
-              if (event.nativeEvent.wheelDelta > 0) {
-                slider?.current?.slickNext();
-              } else {
-                slider?.current?.slickPrev();
-              }
-            }}
-          >
+    <>
+      <Head>
+        <title>Our Services - Winnopro</title>
+        <meta
+          name="description"
+          content="Learn about our services and how we can help you."
+        />
+        <meta property="og:title" content="Our Services  - Winnopro" />
+        <meta
+          property="og:description"
+          content="Learn about our services and how we can help you."
+        />
+      </Head>
+      <div
+        id="services"
+        className="w-screen-xl -mb-[280px] pl-9 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 bg-main-orange "
+      >
+        <CustomHeader
+          classes=" text-white "
+          sub="SERVICES"
+          main="Our Services"
+        />
+        <Slider ref={slider} {...settings}>
+          {Object.keys(data).map((item, i) => (
             <div
-              key={{ i }}
-              className=" lg:flex mb-10 lg:items-center xs:flex xs:flex-col xs:items-end "
+              onWheel={(event) => {
+                if (event.nativeEvent.wheelDelta > 0) {
+                  slider?.current?.slickNext();
+                } else {
+                  slider?.current?.slickPrev();
+                }
+              }}
             >
-              <div className=" xl:w-9/12 max-w-[1000px]  w-full font-cambria bg-white my-5 px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-8 ml-[1px] ">
-                {data[item].map((i, key) => (
-                  <a
-                    key={key}
-                    href="#"
-                    className="relative block  overflow-hidden xxl:mb-10 mb-5 "
-                  >
-                    <div className="flex space-x-5  items-center ">
-                      <div className="block sm:shrink-0">
-                        <Image
-                          alt=""
-                          src={servicesicon}
-                          className="h-10 w-10 lg:w-14 lg:h-14  rounded-lg object-cover shadow-sm"
-                        />
-                      </div>
-                      <div>
-                        <h3 className=" text-mobCardTitle   lg:text-cardtitle font-bold text-wp-gray ">
-                          {i.topic}
-                        </h3>
-                      </div>
-                    </div>
-
-                    <div className="mt-4 text-mobDescription lg:text-cardDesc lg:ml-20 ml-[58px] flex ">
-                      <p className="max-w-[65ch]  text-wp-gray ">
-                        {i.description}
-                      </p>
-                    </div>
-                  </a>
-                ))}
-              </div>
               <div
-                //  className=" lg:bg-cover lg:bg-no-repeat lg:bg-center lg:h-[120vh]"
-                className=" xs:w-10/12 xxl:h-[550px] xxl:w-[550px] lg:h-[55%] "
+                key={{ i }}
+                className=" lg:flex mb-10 lg:items-center xs:flex xs:flex-col xs:items-end "
               >
-                <Image
-                  className=" xs:-mt-10  lg:-ml-10 object-contain lg:object-cover "
-                  src={
-                    windowWidth < 1024
-                      ? data[item][0].mobImage
-                      : data[item][0].image
-                  }
-                />
+                <div className=" xl:w-9/12 max-w-[1000px]  w-full font-cambria bg-white my-5 px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-8 ml-[1px] ">
+                  {data[item].map((i, key) => (
+                    <a
+                      key={key}
+                      href="#"
+                      className="relative block  overflow-hidden xxl:mb-10 mb-5 "
+                    >
+                      <div className="flex space-x-5  items-center ">
+                        <div className="block sm:shrink-0">
+                          <Image
+                            alt=""
+                            src={servicesicon}
+                            className="h-10 w-10 lg:w-14 lg:h-14  rounded-lg object-cover shadow-sm"
+                          />
+                        </div>
+                        <div>
+                          <h3 className=" text-mobCardTitle   lg:text-cardtitle font-bold text-wp-gray ">
+                            {i.topic}
+                          </h3>
+                        </div>
+                      </div>
+
+                      <div className="mt-4 text-mobDescription lg:text-cardDesc lg:ml-20 ml-[58px] flex ">
+                        <p className="max-w-[65ch]  text-wp-gray ">
+                          {i.description}
+                        </p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+                <div
+                  //  className=" lg:bg-cover lg:bg-no-repeat lg:bg-center lg:h-[120vh]"
+                  className=" xs:w-10/12 xxl:h-[550px] xxl:w-[550px] lg:h-[55%] "
+                >
+                  <Image
+                    className=" xs:-mt-10  lg:-ml-10 object-contain lg:object-cover "
+                    src={
+                      windowWidth < 1024
+                        ? data[item][0].mobImage
+                        : data[item][0].image
+                    }
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
+          ))}
+        </Slider>
+      </div>
+    </>
   );
 }
 
