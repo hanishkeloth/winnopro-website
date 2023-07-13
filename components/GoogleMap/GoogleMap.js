@@ -1,5 +1,10 @@
 import React, { useCallback, useRef } from "react";
-import { GoogleMap, useLoadScript } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  Marker,
+  useLoadScript,
+  useJsApiLoader,
+} from "@react-google-maps/api";
 
 //import mapStyles from "./mapUtils/mapStyles";
 
@@ -15,10 +20,10 @@ const options = {
   zoomControl: true,
 };
 
-export default function GoogleMapComponent() {
-  const { isLoaded, loadError } = useLoadScript({
+export default function GoogleMapComponent({ lat, lng }) {
+  const { isLoaded, loadError } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_googleMapsApiKey,
-    //googleMapsApiKey: "",
+    //  googleMapsApiKey: "",
     libraries,
   });
 
@@ -34,13 +39,19 @@ export default function GoogleMapComponent() {
     <GoogleMap
       id="map"
       mapContainerStyle={mapContainerStyle}
-      zoom={14} 
+      zoom={7}
+      defaultCenter={{ lat: 13.012295606815071, lng: 77.55631622870938 }}
       center={{
-        lat: 13.011590,
-        lng: 77.555010,
-      }} 
+        lat: 13.01159,
+        lng: 77.55501,
+      }}
       options={options}
       onLoad={onMapLoad}
-    ></GoogleMap>
+    >
+      <Marker
+        position={{ lat: 13.012295606815071, lng: 77.55631622870938 }}
+        // icon={"http://maps.google.com/mapfiles/ms/icons/green-dot.png"}
+      />
+    </GoogleMap>
   );
 }
