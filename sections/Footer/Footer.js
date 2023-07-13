@@ -71,22 +71,22 @@ const Footer = () => {
   return (
     <>
       <div className="w-screen-xl text-description text-white font-cambria bg-sec-blue px-4 py-8 sm:px-6 sm:py-12 lg:px-24 lg:py-14 ">
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="">
-            <div className="">
-              <Image
-                src={logo}
-                className=" object-cover w-[225px]  lg:w-[251px] lg:h-[44px] "
-              />
-            </div>
-            <div className="grid mt-6 text-[16px] font-medium grid-cols-1 lg:grid-cols-2">
+            <Image
+              src={logo}
+              className=" object-cover w-[225px]  lg:w-[251px] lg:h-[44px] "
+            />
+          </div>
+          <div className="">
+            <div className="grid text-[16px] font-medium grid-cols-2">
               {navigation.map((data) => {
                 return <a href={data.url}>{data.label}</a>;
               })}
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 ">
             {data.map(({ location, address }) => {
               return (
                 <div className="">
