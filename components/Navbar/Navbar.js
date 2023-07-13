@@ -56,6 +56,7 @@ export default function NavBar() {
       setNavbar(false);
     }
   }, [windowWidth]);
+  //console.log(windowWidth);
 
   return (
     <div className="w-full bg-white sticky shadow-md z-20 top-0 text-description font-cambria text-wp-gray ">
